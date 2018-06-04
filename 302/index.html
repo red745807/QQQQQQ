@@ -37,9 +37,89 @@ a:hover, a:active {
 	color: #ED3983;
 }
 </style>
+<script type="text/jscript"">
+function disableRightClick(e)
 
+{
+
+  var message = "尊重版權，請停止使用右鍵";
+
+  
+
+  if(!document.rightClickDisabled) // initialize
+
+  {
+
+    if(document.layers) 
+
+    {
+
+      document.captureEvents(Event.MOUSEDOWN);
+
+      document.onmousedown = disableRightClick;
+
+    }
+
+    else document.oncontextmenu = disableRightClick;
+
+    return document.rightClickDisabled = true;
+
+  }
+
+  if(document.layers || (document.getElementById && !document.all))
+
+  {
+
+    if (e.which==2||e.which==3)
+
+    {
+
+      alert(message);
+
+      return false;
+
+    }
+
+  }
+
+  else
+
+  {
+
+    alert(message);
+
+    return false;
+
+  }
+
+}
+
+disableRightClick();
+
+
+</script>
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
 </head>
-<body bgcolor="#FFFFFF">
+<body bgcolor="#FFFFFF" onload="MM_preloadImages('images/item1_580.jpg','images/item2_580.jpg','images/item3_141.jpg','images/item4_580.jpg')">
 <!-- Save for Web Slices (DW03.psd) -->
 <table width="980" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_01">
 	<tr>
@@ -69,13 +149,13 @@ a:hover, a:active {
 		    <td height="330" colspan="4" align="center"><img src="images/item1_580.jpg" width="580" height="330" id="main"/></td>
 	      </tr>
 		  <tr>
-		    <td height="120" align="center"><p><img src="images/item1_141.jpg" name="item1" width="141" height="80" id="item1" /><br />
+		    <td height="120" align="center"><p><img src="images/item1_141.jpg" name="item1" width="141" height="80" id="item1" onmouseover="MM_swapImage('main','','images/item1_580.jpg',1)" /><br />
 		    清水寺</p></td>
-		    <td align="center"><p><img src="images/item2_141.jpg" name="item2" width="141" height="80" id="item2" /><br />
+		    <td align="center"><p><img src="images/item2_141.jpg" name="item2" width="141" height="80" id="item2" onmouseover="MM_swapImage('main','','images/item2_580.jpg',1)" /><br />
 	        金閣寺</p></td>
-		    <td align="center"><p><img src="images/item3_141.jpg" name="item3" width="141" height="80" id="item3" /><br />
+		    <td align="center"><p><img src="images/item3_141.jpg" name="item3" width="141" height="80" id="item3" onmouseover="MM_swapImage('main','','images/item3_141.jpg',1)" /><br />
 	        哲學之道</p></td>
-		    <td align="center"><p><img src="images/item4_141.jpg" name="item4" width="141" height="80" id="item4" /><br />
+		    <td align="center"><p><img src="images/item4_141.jpg" name="item4" width="141" height="80" id="item4" onmouseover="MM_swapImage('main','','images/item4_580.jpg',1)" /><br />
 	        造幣局</p></td>
 	      </tr>
 	    </table></td>
