@@ -4,6 +4,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>PhotoTour 旅遊攝影網 :: 歡迎愛旅遊愛攝影的你 ::</title>
 <link href="website.css" rel="stylesheet" type="text/css" media="all" />
+<script src="SpryAssets/SpryEffects.js" type="text/javascript"></script>
+<script type="text/javascript">
+function MM_effectSlide(targetElement, duration, from, to, toggle)
+{
+	Spry.Effect.DoSlide(targetElement, {duration: duration, from: from, to: to, toggle: toggle});
+}
+</script>
 </head>
 <body>
 <div id="bgzone">
@@ -22,7 +29,7 @@
     </div>
     <div id="sideL">
       <div class="sideTitle"><img src="images/menu_title1.gif" width="603" height="65" alt="攝影團隊" /></div>
-      <div id="contentAbout"> <img src="images/about1.gif" alt="攝影指導陣容" />
+      <div id="contentAbout"> <img src="images/about1.gif" alt="攝影指導陣容" onclick="MM_effectSlide('people1', 1000, '100%', '0%', true)" />
         <div id="people1">
           <table>
             <tr>
@@ -44,7 +51,7 @@
             </tr>
           </table>
         </div>
-        <img src="images/about2.gif" alt="旅遊嚮導陣容" /><br />
+        <img src="images/about2.gif" alt="旅遊嚮導陣容" onclick="MM_effectSlide('people2', 1000, '0%', '100%', true)" /><br />
         <div id="people2">
           <table>
             <tr>
